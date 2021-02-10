@@ -1,0 +1,263 @@
+/* Police et couleur - Sélecteur universel/Universal selctor*/
+@font-face {
+    font-family: 'ralewaythin';
+    src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot');
+    src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2'),
+         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff') format('woff'),
+         url('raleway-variablefont/raleway-variablefont_wght-webfont.svg#ralewaythin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*
+{
+    font-family:ralewaythin, raleway,"Times New Roman",Verdana,Arial,sans-serif;
+    color:#0065FC; /* #DEEBFF */ /* #FFFFFF; */ /* rgb(240,96,204) */ /* #000000; */
+}
+
+body
+{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+/* Reset des comportements de base non souhaités */
+a
+{
+    text-decoration:none; 
+}
+
+ul
+{
+    list-style-type:none;
+}
+
+
+
+/* FLEX */
+header
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+nav ul
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.searchbox-member
+{
+    display:flex;
+    flex-direction:row;
+}
+
+.searchbox-member ul
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.pagemain
+{
+    display:flex;
+    justify-content:space-between;
+}
+
+.collection
+{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-content:space-between;
+}
+
+aside .card
+{
+    display:flex;
+}
+
+footer
+{
+    display:flex;
+    flex-direction:row;
+}
+
+
+
+/* Dimensionnement des parties */
+nav
+{
+    width:360px; /*100%;*/
+}
+
+.searchbox-member ul
+{
+    background-color:white;
+    width:50%;
+}
+
+.pagemain-member
+{
+    width:70%;
+    margin:1%;
+    border-radius:10px;
+}
+
+.pagemain-member .collection
+{
+    width:90%;
+    margin:auto;
+}
+
+.pagemain-member .card
+{
+    width:100%;
+    background-color: gold;
+    margin:0;
+}
+
+aside
+{
+    width:28%;
+    margin:1%;
+    border-radius:10px;
+}
+
+.pagearea
+{
+    width:100%;
+}
+
+.pagearea 
+
+.pagearea .collection-member
+{
+    width:25%;
+}
+
+.pagearea .card
+{
+    width:100%;
+}
+
+
+/* Couleur de fond */
+aside, footer, .pagemain-member
+{
+    background-color:#F2F2F2;
+}
+
+
+
+/* Entête avec menu de navigation */
+.corner
+{
+    background-color:blue;
+    width:180px; /*50%;*/
+    text-align:center;
+}
+
+.corner img
+{
+    width:100%;
+    height:100%;
+}
+
+nav ul li
+{
+    text-align:center;
+}
+
+
+
+/* Section supérieure avec champ de recherche et filtres */
+.searchbox-member ul li
+{
+    text-align:center;
+    border: 2px solid #F2F2F2;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+
+/* Cartes */
+.card
+{
+    background-color: white;
+    
+    border-radius:10px;
+    /*padding:1%;  */ 
+}
+/*
+.card img
+{
+    
+}
+*/
+.pagemain-member img
+{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    width:250px; /*100%;*/
+    height: 175px;
+}
+
+aside img
+{
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    width:40%;
+    height:150px;
+}
+
+.pagearea img
+{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    width:100%;
+    height:250px;
+}
+
+.collection-member img
+{
+    height:100px;
+}
+
+figcaption
+{
+    padding-left:10px;
+}
+
+
+
+/* Pied de page */
+footer ul
+{
+    width:33%;
+}
+
+
+
+/* Visualisation - A SUPPRIMER à la fin des essais*/
+html, body
+{
+    background-color:red;
+}
+
+.pagewrapper
+{
+    background-color:yellowgreen;
+}
+
+header a
+{
+    background-color: green;
+}
