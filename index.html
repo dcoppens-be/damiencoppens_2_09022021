@@ -16,15 +16,19 @@
         <!-- CSS personnalise -->
         <link rel="stylesheet" href="style.css"/>
         <!-- CSS FontAwesome -->
+        <!--
         <link href="fontawesome-free-5.15.2-web/css/solid.css" rel="stylesheet">
         <link href="fontawesome-free-5.15.2-web/css/regular.css" rel="stylesheet">
+        -->
 
         <!-- Liaison avec le(s) fichier(s) JavaScript -->
         <!-- JS FontAwesome -->
+        
         <script defer src="fontawesome-free-5.15.2-web/js/solid.js"></script>
         <script defer src="fontawesome-free-5.15.2-web/js/regular.js"></script>
         <script defer src="fontawesome-free-5.15.2-web/js/fontawesome.js"></script>
         
+
     </head>
 
     <body>
@@ -57,10 +61,8 @@
                 FORM: definition de METHOD, ACTION
                 INPUT text: definition de NAME, ID, SIZE, MAXLENGTH, PLACEHOLDER
                 LABEL: definition de FOR -->
-                <form>
-                    <label><i class="fas fa-map-marker-alt"></i></label>
-                    <input type="search" value="Marseille, France" autofocus disabled placeholder="Marseille, France" />
-                    <input type="button" value="Rechercher" />
+                <form id="champ">
+                    <label for="ville-village" id="champ-label"><i class="fas fa-map-marker-alt"></i></label><input type="search" name="ville-village" id="ville-village" value="Marseille, France" autofocus disabled placeholder="Marseille, France" /><input type="button" value="Rechercher" id="champ-bouton"/><i class="fas fa-search"></i>
                 </form>
     
 
@@ -203,6 +205,7 @@
                                     </div>
                                 </figcaption>
                             </figure>
+                        </a>
 
                             <a href="#">
                                 <figure class="card">
@@ -217,7 +220,7 @@
                                     </figcaption>
                                 </figure>
                             </a>
-                        </a>
+
                     </div>
     
                 </aside>
@@ -230,6 +233,7 @@
                 
                 <div class="collection">
                     
+                    <div class="collection-member">
                     <a href="#">
                         <figure class="card">
                             <img src="images/activites/4_small/marseille-vieux-port-activite.jpg"
@@ -239,9 +243,10 @@
                             </figcaption>
                         </figure>
                     </a>
+                </div>
                 
 
-                    <div class="collection-member">
+                    <div class="collection-member hastwo">
                         <a href="#">
                             <figure class="card">
                                 <img src="images/activites/4_small/marseille-fort-pomegues-activite.jpg" alt="Fort de Pomègues - Activité"
@@ -263,6 +268,7 @@
                         </a>
                     </div>
 
+                    <div class="collection-member">
                     <a href="#">
                         <figure class="card">
                             <img src="images/activites/4_small/marseille-parc-national-calanques-activite.jpg"
@@ -272,8 +278,9 @@
                             </figcaption>
                         </figure>
                     </a>
+                </div>
 
-                    <div class="collection-member">
+                    <div class="collection-member hastwo">
                         <a href="#">
                             <figure class="card">
                                 <img src="images/activites/4_small/marseille-notre-dame-garde-activite.jpg"
