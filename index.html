@@ -35,22 +35,32 @@
     
         <div class="pagewrapper">
             <header>
-                <div class="corner is-onleft">
+
+                <div class="topsection-logo">
                     <a href="#"><img src="images/logo/Reservia@3x.png" alt="Location d'hébergements de vacances - Reservia: logo" title="Cliquable" width="385" height="180" /></a>
-                </div>
-                
-                <div class="corner is-onright">
-                    <a href="#">S'inscrire</a>
                 </div>
 
                 <nav>
-                    <ul>
-                        <li><a href="#ancre1"> <h3>Hébergements</h3></a></li>
-                        <li><a href="#ancre2"> <h3>Activités</h3></a></li>
+                    <ul class="topsection-menu">
+                        <a href="#ancre1"><li>Hébergements</li></a>
+                        <a href="#ancre2"><li>Activités</li></a>
+                        <a href="#"><li>S'inscrire</li></a>
                     </ul>
                 </nav>
+
+                <!--   
+                <nav>
+                    <div class="topsection-menu">
+                        <div><a href="#ancre1">Hébergements</a></div>
+                        <div><a href="#ancre2">Activités</a></div>
+                        <div><a href="#">S'inscrire</a></div>
+                    </div>
+                </nav>
+-->
             </header>
-    
+
+
+
             <section class="searchbox">
                 <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
                 <p>
@@ -61,25 +71,39 @@
                 FORM: definition de METHOD, ACTION
                 INPUT text: definition de NAME, ID, SIZE, MAXLENGTH, PLACEHOLDER
                 LABEL: definition de FOR -->
-                <form id="champ">
-                    <label for="ville-village" id="champ-label"><i class="fas fa-map-marker-alt"></i></label><input type="search" name="ville-village" id="ville-village" placeholder="Marseille, France" autofocus /><input type="button" value="Rechercher" id="champ-bouton"/><i class="fas fa-search"></i>
+                <form class="searchbox-champ">
+                    <div class="customicone-search"><label for="ville-village" id="champ-label"><i class="fas fa-map-marker-alt"></i></label></div>
+                    <div class="searchbox-champ-saisie"><input type="search" name="ville-village" id="ville-village" placeholder="Marseille, France" autofocus /></div>
+                    <div class="searchbox-champ-bouton"><input type="button" value="Rechercher" id="champ-bouton"/></div>
+                    <!--<div class="searchbox-champ-bouton"><input type="button" value="<i class="fas fa-search"></i>" id="champ-bouton"/></div>-->
                 </form>
     
 
                 <div class="searchbox-member">
+                    <div class="searchbox-member-text">
                     <p>Filtres</p>
+                    </div>
                     <ul>
-                        <li> <i class="fas fa-money-bill-wave"></i> Economique </li>
-                        <li> <i class="fas fa-child"></i> Familial </li>
-                        <li> <i class="fas fa-heart"></i> Romantique </li>
-                        <li> <i class="fas fa-dog"></i> Animaux autorisés </li>
+                        <li> 
+                            <div class="customicone-filtres"><i class="fas fa-money-bill-wave isblue"></i></div> 
+                            <div class="searchbox-member-filtre-text">Economique</div> 
+                        </li>
+                        <li> <i class="fas fa-child isblue"></i> Familial </li>
+                        <li> <i class="fas fa-heart isblue"></i> Romantique </li>
+                        <li> <i class="fas fa-dog isblue"></i> Animaux autorisés </li>
                     </ul>
                 </div>
-    
-                <p> <i class="fas fa-info-circle"></i> Plus de 500 logements sont disponibles dans cette ville</p>
+                
+                <div class="searchbox-info">
+                    <div class="customicone-info"><i class="fas fa-info"></i></div>
+                    <div class="searchbox-info-text">
+                        <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                    </div>
+                </div>
             </section>
     
     
+
             <section class="pagemain">
                 <div class="pagemain-member">
                     <h2 id="ancre1">Hébergements à Marseille</h2>
@@ -93,7 +117,7 @@
                                     <p>Hôtel la Cannebière</p>
                                     <p>Nuit à partir de <strong>25 &euro;</strong></p>
                                     <div class="card-rating">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i>
                                     </div>
                                 </figcaption>
                             </figure>
@@ -121,7 +145,7 @@
                                     <p>Hôtel Les mouettes</p>
                                     <p>Nuit à partir de 76 &euro;</p>
                                     <div class="card-rating">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i>
                                     </div>
                                 </figcaption>
                             </figure>
@@ -135,7 +159,7 @@
                                     <p>Hôtel de la mer</p>
                                     <p>Nuit à partir de 46 &euro;</p>
                                     <div class="card-rating">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i><i class="fas fa-star isgrey"></i>
                                     </div>
                                 </figcaption>
                             </figure>
@@ -149,7 +173,7 @@
                                     <p>Auberge Le Panier</p>
                                     <p>Nuit à partir de <strong>23 &euro;</strong> </p>
                                     <div class="card-rating">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i>
                                     </div>
                                 </figcaption>
                             </figure>
@@ -170,7 +194,7 @@
                         </a>
                     </div>
                 
-                    <a href="#">Afficher plus</a>
+                    <a href="#"> <p>Afficher plus</p> </a>
                 </div>
     
     
@@ -201,7 +225,7 @@
                                     <p>Au coeur de l'eau Chambres d'hôtes</p>
                                     <p>Nuit à partir de 71 &euro;</p>
                                     <div class="card-rating">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i>
                                     </div>
                                 </figcaption>
                             </figure>
@@ -215,7 +239,7 @@
                                         <p>Hôtel Tout bleu et Blanc</p>
                                         <p>Nuit à partir de 68 &euro;</p>
                                         <div class="card-rating">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star isgrey"></i>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -227,10 +251,10 @@
             </section>
     
     
+
             <section class="pagearea">
                 <h2 id="ancre2">Activités à Marseille</h2>
-    
-                
+        
                 <div class="collection">
                     
                     <div class="collection-member">
@@ -239,7 +263,7 @@
                             <img src="images/activites/4_small/marseille-vieux-port-activite.jpg"
                                 alt="Vieux Port - Activité" title="Cliquable" loading="lazy" width="702" height="468"/>
                             <figcaption>
-                                Vieux Port
+                                <p>Vieux Port</p>
                             </figcaption>
                         </figure>
                     </a>
@@ -252,7 +276,7 @@
                                 <img src="images/activites/4_small/marseille-fort-pomegues-activite.jpg" alt="Fort de Pomègues - Activité"
                                     title="Cliquable" loading="lazy" width="356" height="534" />
                                 <figcaption>
-                                    Fort de Pomègues
+                                    <p>Fort de Pomègues</p>
                                 </figcaption>
                             </figure>
                         </a>
@@ -262,7 +286,7 @@
                                 <img src="images/activites/4_small/marseille-iles-frioul-activite.jpg" alt="Îles du Frioul - Activité"
                                     title="Cliquable" loading="lazy" width="648" height="432" />
                                 <figcaption>
-                                    Îles du Frioul
+                                    <p>Îles du Frioul</p>
                                 </figcaption>
                             </figure>
                         </a>
@@ -274,7 +298,7 @@
                             <img src="images/activites/4_small/marseille-parc-national-calanques-activite.jpg"
                                 alt="Parc National des Calanques - Activité" title="Cliquable" loading="lazy" width="606" height="402"/>
                             <figcaption>
-                                Parc National des Calanques
+                                <p>Parc National des Calanques</p>
                             </figcaption>
                         </figure>
                     </a>
@@ -286,7 +310,7 @@
                                 <img src="images/activites/4_small/marseille-notre-dame-garde-activite.jpg"
                                     alt="Notre-Dame-de-la-Garde - Activité" title="Cliquable" loading="lazy" width="589" height="383" />
                                 <figcaption>
-                                    Notre-Dame-de-la-Garde
+                                    <p>Notre-Dame-de-la-Garde</p>
                                 </figcaption>
                             </figure>
                         </a>
@@ -296,7 +320,7 @@
                                 <img src="images/activites/4_small/marseille-parc-longchamp-activite.jpg" alt="Parc Longchamp - Activité"
                                     title="Cliquable" loading="lazy" width="504" height="378" />
                                 <figcaption>
-                                    Parc Longchamp
+                                    <p>Parc Longchamp</p>
                                 </figcaption>
                             </figure>
                         </a>

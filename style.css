@@ -1,4 +1,17 @@
-/* Police et couleur - Sélecteur universel/Universal selctor*/
+/* A supprimer après validation du code*/
+
+html, body
+{
+    background-color:red;
+}
+
+.pagewrapper
+{
+    background-color:yellowgreen;
+}
+
+
+/* Définition de la police et liens avec les fichiers aux différents formats */
 @font-face {
     font-family: 'ralewaythin';
     src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot');
@@ -8,15 +21,15 @@
          url('raleway-variablefont/raleway-variablefont_wght-webfont.svg#ralewaythin') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
+/* Application de la police à toute la page avec le sélecteur universel */
 *
 {
     font-family:ralewaythin, raleway,"Times New Roman",Verdana,Arial,sans-serif;
-    /*color:#0065FC; */ /* #DEEBFF */ /* #FFFFFF; */ /* rgb(240,96,204) */ /* #000000; */
 }
 
+/* Forcer le corps de la page à occuper toute la largeur, avec remise à 0 du margin et du padding */
 body
 {
     width:100%;
@@ -24,13 +37,18 @@ body
     padding:0;
 }
 
+
+
 /* Reset des comportements de base non souhaités */
+
+/* Suppression des caractéristiques initialies des liens: mise en forme et couleur */
 a
 {
     text-decoration:none; 
     color:black;
 }
 
+/* Suppression des puces des listes non ordonnées */
 ul
 {
     list-style-type:none;
@@ -38,19 +56,40 @@ ul
 
 
 
-/* FLEX */
+/* FLEX: agencement des éléments avec cette méthode */
+/* Classe commune à tous les ensembles de cartes: hébergements, populaires, activités */
+.collection
+{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-content:space-between;
+}
+
+/* Entête */
 header
 {
     display:flex;
     flex-direction:row;
+    justify-content:space-between;
     flex-wrap:wrap;
 }
 
-nav ul
+.topsection-menu
 {
     display:flex;
     flex-direction:row;
-    justify-content:space-around;
+}
+
+/* Section supérieure avec champ de saisie et filtres */
+.searchbox-info
+{
+    display:flex;
+}
+
+.searchbox-champ
+{
+    display:flex;
 }
 
 .searchbox-member
@@ -63,23 +102,26 @@ nav ul
 {
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content:flex-start;
+    flex-wrap:wrap;
 }
 
+/* Section hébergements */
 .pagemain
 {
     display:flex;
     justify-content:space-between;
+    /*flex-wrap:wrap;*/
 }
 
-.collection
+/* ASIDE - Disposition du contenu de la carte: figure à gauche, figcaption à droite */
+aside .card
 {
     display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    align-content:space-between;
+    justify-content:flex-start;
 }
 
+/* Partie 'Activités' */
 .collection-member
 {
     display:flex;
@@ -87,11 +129,7 @@ nav ul
     justify-content:space-between;
 }
 
-aside .card
-{
-    display:flex;
-}
-
+/* FOOTER - Disposition des 3 listes l'une à côté de l'autre*/
 footer
 {
     display:flex;
@@ -100,16 +138,22 @@ footer
 
 
 
-/* Dimensionnement des parties */
+/* Dimensionnement des parties, margin & padding */
 nav
 {
-    width:360px; /*100%;*/
+    margin:0;
+    padding:0;
+    width:540px;
+}
+
+.topsection-menu
+{
+    padding:0;
 }
 
 .searchbox-member ul
 {
-    background-color:white;
-    width:50%;
+    width:90%;
 }
 
 .pagemain-member
@@ -133,7 +177,6 @@ nav
 .pagemain-member .card
 {
     width:100%;
-    background-color: gold;
     margin:0;
     margin-bottom:5%;
     padding:1%;
@@ -149,6 +192,7 @@ aside
     padding-right:1%;
     padding-bottom:2%;
     border-radius:10px;
+    /*min-width:250px;*/
 }
 
 aside .collection
@@ -174,15 +218,23 @@ aside .card
     margin-bottom:4%;
 }
 
+.pagearea .collection
+{
+    width:100%;
+    margin:0;
+}
+
 .pagearea .collection-member
 {
     width:22%;
+    min-width:250px;
 }
 
 .pagearea .card
 {
     width:100%;
     margin:0;
+    margin-bottom:5%;
 }
 
 
@@ -195,23 +247,51 @@ aside, footer, .pagemain-member
 
 
 /* Entête avec menu de navigation */
-.corner
+
+.topsection-menu a:hover
 {
-    background-color:blue;
-    width:180px; /*50%;*/
-    text-align:center;
+    color:#0065FC;
+    border-top: 3px solid #0065FC;
 }
 
-.corner img
+nav ul
+{
+    margin:0;
+}
+
+nav ul a
 {
     width:100%;
-    height:100%;
+    
 }
 
 nav ul li
 {
     text-align:center;
+    width:100%;
+    padding-top:2em;
 }
+
+.topsection-menu :nth-child(3)
+{
+    /* order:-1; /* Changement d'ordre pour l'affichage mobile */
+    text-align:right;
+    font-weight:bold;
+    color:#0065FC;
+}
+
+.topsection-logo
+{
+    width:fit-content;
+}
+
+.topsection-logo img
+{
+    width:154px;
+    height:72px;
+}
+
+
 
 
 
@@ -221,6 +301,7 @@ nav ul li
     background-color: white;
     
     border-radius:10px;
+    box-shadow:2px 2px 4px black;
     /*padding:1%;  */ 
 }
 
@@ -264,6 +345,12 @@ figcaption
     padding-left:10px;
 }
 
+p
+{
+    margin:0;
+    padding-top:8px;
+    padding-bottom:8px;
+}
 
 
 /* Pied de page */
@@ -274,61 +361,199 @@ footer ul
 
 
 
-/* Visualisation - A SUPPRIMER à la fin des essais*/
-html, body
+
+
+
+/* Visuel: champ de saisie */
+.customicone-search
 {
-    background-color:red;
-}
-
-.pagewrapper
-{
-    background-color:yellowgreen;
-}
-
-header a
-{
-    background-color: green;
-}
-
-
-
-/* Visuel: champ de saisir */
-#champ-label
-{
+    /*
+    
+    height:2em;*/
+    font-size:1.2em;
     background-color:#F2F2F2;
-    font-size:1em;
-    height:2em;
+    text-align:center;
+    width:1em;
+    padding:0.6em;
+    border: 1px solid #F2F2F2;
+    border-top-left-radius:25%;
+    border-bottom-left-radius:25%;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
 }
 
-#ville-village
+.searchbox-champ-saisie
 {
-    border:1px solid #F2F2F2;
+    font-size:1.2em;
     background-color:white;
-    height:2em;
+    text-align:center;
+    border-top:1px solid #F2F2F2;
+    border-bottom:1px solid #F2F2F2;
+    
+    width:12em;
     margin:0;
-    padding:5px;
+    padding:0;
+    
+}
+
+.searchbox-champ-saisie input
+{
+    border:0;
+    width:100%;
+    height:100%;
+    padding:0.6em;
+    font-weight:bold;
+}
+
+.searchbox-champ-bouton
+{
+    font-size:1.2em;
+    text-align:center;
+    background-color:#0065FC;
+    color:white;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    
+    border:1px solid #0065FC;
+    
+    margin:0;
+    padding:0;
+    
+}
+
+.searchbox-champ-bouton input
+{
+    background-color:#0065FC;
+    border:0;
+    width:100%;
+    height:100%;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    padding:0.6em;
     font-weight:bold;
 }
 
 #champ-bouton
 {
-    background-color:#0065FC;
-    color:white;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-    border-width:0;
-    height:2em;
-    margin:0;
-    padding:5px;
+    
 }
 
 /* Section supérieure avec champ de recherche et filtres */
 .searchbox-member ul li
 {
-    height:2em;
+    display:flex;
+    height:2.5em;
+    border: 3px solid #F2F2F2;
+    border-left:0;
+    border-radius:1.25em;
+    margin-right:1em;
+    margin-bottom:0.5em;
+}
+
+.searchbox-member ul li:hover
+{
+    background-color:#0065FC;
+}
+
+
+
+/* Icônes bleues */
+.fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog, .fa-info-circle
+{
+    /*color:#0065FC;*/
+    /*background-color:black;
+    height:40px;
+    width:40px;
+    border-radius:20px;*/
+}
+
+.fa-star
+{
+    color:#0065FC;
+}
+
+.isgrey
+{
+    color:#F2F2F2;
+}
+
+.isblue
+{
+    color:#0065FC;
+}
+
+.searchbox-member-text
+{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+.customicone-filtres
+{
+    
+    font-size:1.0em;
+    background-color:lightblue;
+    border-radius:50%;
+    height:1.75em;
+    width:2.5em;
+    text-align:center;
+    padding-top:0.75em;
+    /*
+    color:#0065FC;
     
     text-align:center;
-    vertical-align:center;
-    border: 2px solid #F2F2F2;
-    border-radius:10px;
+    width:1.2em;
+    height:2em;
+    padding-right:0.8em;
+    padding-left:0.7em;
+    padding-top:0.7em;
+    padding-bottom:0em;
+    border:0;
+    */
+}
+
+.searchbox-member-filtre-text
+{
+    margin:auto;
+    padding-left:0.5em;
+    padding-right:1em;
+}
+
+.customicone-info
+{
+    color:#0065FC;
+    text-align:center;
+    width:1em;
+    height:1em;
+    padding:0.25em;
+    border: 1px solid #F2F2F2;
+    border-radius:50%;
+}
+
+.searchbox-info-text p
+{
+    margin:0;
+    padding:0.25em;
+}
+/**/
+.fa-chart-line
+{
+    display:block;
+    float:right;
+}
+
+/* Polices */
+.searchbox-member
+{
+    font-weight:bold;
+}
+
+figcaption p:first-child
+{
+    font-weight:bold;
+}
+
+footer ul li:first-child
+{
+    font-weight:bold;
 }
