@@ -1,26 +1,41 @@
 /* A supprimer après validation du code*/
-
-html, body
-{
-    background-color:red;
-}
-
 .pagewrapper
 {
-    background-color:yellowgreen;
+    
 }
 
+/* Classes génériques à cette maquette */
+
+/* Mise en bleu de toutes les étoiles d'évaluation avant l'action de la classe ISGREY */ 
+.fa-star, .isblue
+{
+    color:#0065FC;
+}
+
+.isgrey
+{
+    color:#F2F2F2;
+}
+
+.iswhite
+{
+    color:white;
+}
 
 /* Définition de la police et liens avec les fichiers aux différents formats */
 @font-face {
     font-family: 'ralewaythin';
     src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot');
     src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
-         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2'),
+         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2 supports variations'),
+         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2-variations'),
          url('raleway-variablefont/raleway-variablefont_wght-webfont.woff') format('woff'),
          url('raleway-variablefont/raleway-variablefont_wght-webfont.svg#ralewaythin') format('svg');
-    font-weight: normal;
+    font-weight:bolder;
+    font-stretch:normal;
     font-style: normal;
+    /* wght:500; */
+    /* font-variation-settings: "wght" 100; */
 }
 
 /* Application de la police à toute la page avec le sélecteur universel */
@@ -159,9 +174,11 @@ nav
 .pagemain-member
 {
     width:64%;
+    /* margin:; */
     margin:0;
     margin-left:1%;
     margin-right:1%;
+    /* padding:; */
     padding-left:1%;
     padding-right:1%;
     padding-bottom:2%;
@@ -313,6 +330,7 @@ nav ul li
 
 .pagemain-member img
 {
+    /* border-radius:; */
     border-top-left-radius:10px;
     border-top-right-radius:10px;
     width:250px; /*100%;*/
@@ -410,7 +428,6 @@ footer ul
     font-size:1.2em;
     text-align:center;
     background-color:#0065FC;
-    color:white;
     border-top-right-radius:10px;
     border-bottom-right-radius:10px;
     
@@ -457,7 +474,7 @@ footer ul
 
 
 
-/* Icônes bleues */
+/* Icônes */
 .fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog, .fa-info-circle
 {
     /*color:#0065FC;*/
@@ -467,20 +484,9 @@ footer ul
     border-radius:20px;*/
 }
 
-.fa-star
-{
-    color:#0065FC;
-}
 
-.isgrey
-{
-    color:#F2F2F2;
-}
 
-.isblue
-{
-    color:#0065FC;
-}
+
 
 .searchbox-member-text
 {
@@ -510,6 +516,8 @@ footer ul
     padding-bottom:0em;
     border:0;
     */
+    position:relative;
+    right:0.3em;
 }
 
 .searchbox-member-filtre-text
@@ -556,4 +564,71 @@ figcaption p:first-child
 footer ul li:first-child
 {
     font-weight:bold;
+}
+
+/* RESPONSIVE DESIGN */
+/* aspect-ratio and orientation and resolution */
+/* Responsive design: tous les types d'écrans de moins de 320px */
+@media all and (max-width: 320px)
+{
+    .topsection-menu
+    {
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+    .topsection-menu :nth-child(3)
+    {
+        order:-1;
+        
+    }
+    #champ-bouton
+    {
+        display:none;
+    }
+    .searchbox-member
+    {
+        flex-direction:column;
+    }
+    .pagemain
+    {
+        flex-direction:column-reverse;
+    }
+    aside
+    {
+        width:100%;
+        margin:0;
+        margin-bottom:1%;
+        border-radius:0;
+    }
+    .pagemain-member
+    {
+        width:100%;
+        margin:0;
+        /* margin-right:0; */
+        background-color:white;
+    }
+    footer
+    {
+        flex-direction:column;
+    }
+    footer ul
+    {
+        width:100%;
+    }
+}
+/* Responsive design: tous les types d'écrans de moins de 1024px */
+@media all and (max-width: 1024px)
+{
+
+}
+
+/* Responsive design: tous les types d'écrans dont la largeur du périphérique est inférieure à 480px */
+@media all and (max-device-width: 480px)
+{
+
+}
+/* Responsive design: seulement les écrans de largeur entre px et px en orientation portrait */
+@media only screen and (min-device-width:400px) and (max-device-width:1100px) and (orientation:portrait)
+{
+
 }
