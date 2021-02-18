@@ -1,28 +1,14 @@
-/* A supprimer après validation du code*/
-.pagewrapper
-{
-    
-}
+/* POLICES*/
+/* Recours à la police Raleway de Google Fonts: 3 méthodes possibles */
+/* (1) Liaison dans le HTML */
+/* (2) Import dans le CSS */
+/* (3) Utilisation directe des fichiers aux différents formats .eot .woff .woff2 .svg .ttf */ 
 
-/* Classes génériques à cette maquette */
+/* (2) Import of Goolge font, Raleway Regular 400, if not link in the HTML */
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); */
 
-/* Mise en bleu de toutes les étoiles d'évaluation avant l'action de la classe ISGREY */ 
-.fa-star, .isblue
-{
-    color:#0065FC;
-}
-
-.isgrey
-{
-    color:#F2F2F2;
-}
-
-.iswhite
-{
-    color:white;
-}
-
-/* Définition de la police et liens avec les fichiers aux différents formats */
+/* (3) Définition de la police et liens avec les fichiers aux différents formats */
+/*
 @font-face {
     font-family: 'ralewaythin';
     src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot');
@@ -34,15 +20,38 @@
     font-weight:bolder;
     font-stretch:normal;
     font-style: normal;
-    /* wght:500; */
-    /* font-variation-settings: "wght" 100; */
 }
+*/
 
 /* Application de la police à toute la page avec le sélecteur universel */
 *
 {
-    font-family:ralewaythin, raleway,"Times New Roman",Verdana,Arial,sans-serif;
+    /*font-family:ralewaythin, raleway,"Times New Roman",Verdana,Arial,sans-serif;*/
+    font-family: 'Raleway', sans-serif;
 }
+
+
+
+/* Classe générique à cette maquette .isblue */
+/* Mise en bleu de toutes les étoiles d'évaluation avant l'action de la classe ISGREY */ 
+.fa-star, .isblue
+{
+    color:#0065FC;
+}
+
+/* Classe générique à cette maquette */
+.isgrey
+{
+    color:#F2F2F2;
+}
+
+/* Classe générique à cette maquette */
+.iswhite
+{
+    color:white;
+}
+
+
 
 /* Forcer le corps de la page à occuper toute la largeur, avec remise à 0 du margin et du padding */
 body
@@ -52,7 +61,11 @@ body
     padding:0;
 }
 
-
+/* Bords à gauche et à droite de la page, à l'exception du footer*/
+header, section
+{
+    padding:0 2% 0 2%;
+}
 
 /* Reset des comportements de base non souhaités */
 
@@ -71,8 +84,15 @@ ul
 
 
 
-/* FLEX: agencement des éléments avec cette méthode */
-/* Classe commune à tous les ensembles de cartes: hébergements, populaires, activités */
+/* Classes communes à tous les ensembles de cartes: hébergements, populaires, activités */
+/* .COLLECTION */
+/* .CARD */
+
+
+
+
+/* Agencement des éléments*/
+/* Agencement avec FLEX */
 .collection
 {
     display:flex;
@@ -85,7 +105,6 @@ ul
 header
 {
     display:flex;
-    flex-direction:row;
     justify-content:space-between;
     flex-wrap:wrap;
 }
@@ -93,7 +112,7 @@ header
 .topsection-menu
 {
     display:flex;
-    flex-direction:row;
+    /* flex-wrap:wrap; */
 }
 
 /* Section supérieure avec champ de saisie et filtres */
@@ -110,14 +129,11 @@ header
 .searchbox-member
 {
     display:flex;
-    flex-direction:row;
 }
 
 .searchbox-member ul
 {
     display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
     flex-wrap:wrap;
 }
 
@@ -126,7 +142,7 @@ header
 {
     display:flex;
     justify-content:space-between;
-    /*flex-wrap:wrap;*/
+    /* flex-wrap:wrap; */
 }
 
 /* ASIDE - Disposition du contenu de la carte: figure à gauche, figcaption à droite */
@@ -137,6 +153,7 @@ aside .card
 }
 
 /* Partie 'Activités' */
+/* Disposition du rassemblement de 2 images */
 .collection-member
 {
     display:flex;
@@ -148,91 +165,116 @@ aside .card
 footer
 {
     display:flex;
-    flex-direction:row;
 }
+
+
+
+
+
 
 
 
 /* Dimensionnement des parties, margin & padding */
-nav
+/* .PAGEMAIN-MEMBER*/
+.pagemain-member img
 {
-    margin:0;
-    padding:0;
-    width:540px;
+    border-radius: 10px 10px 0 0;
+    width:225px; /* 200px; 250 px; */
+    height: 115px;
 }
 
-.topsection-menu
-{
-    padding:0;
-}
-
-.searchbox-member ul
-{
-    width:90%;
-}
-
-.pagemain-member
-{
-    width:64%;
-    /* margin:; */
-    margin:0;
-    margin-left:1%;
-    margin-right:1%;
-    /* padding:; */
-    padding-left:1%;
-    padding-right:1%;
-    padding-bottom:2%;
-    border-radius:10px;
-}
-
-.pagemain-member .collection
-{
-    width:100%;
-    margin:auto;
-}
-
-.pagemain-member .card
-{
-    width:100%;
-    margin:0;
-    margin-bottom:5%;
-    padding:1%;
-}
-
+/* ASIDE */
 aside
 {
-    width:32%;
-    margin:0;
-    margin-left:1%;
-    margin-right:1%;
-    padding-left:1%;
-    padding-right:1%;
-    padding-bottom:2%;
+    width:34%;
+    margin:0 0 0 0; /* L'écart avec la partie 'hébergements' est définie par la marge de PAGEMAIN-MEMBER*/
+    padding:0 2% 2% 2%;
     border-radius:10px;
-    /*min-width:250px;*/
+    min-width:320px;
 }
 
 aside .collection
 {
     width:100%;
-    height:auto;
     margin:0;
 }
 
 aside .card
 {
     width:100%;
-    margin:0;
-    margin-bottom:5%;
-    padding:1%;
+    margin:0 0 5% 0; /* Ecart vertical entre les cartes */
+    padding:1%; /* Bordure */
 }
+
+aside figcaption
+{
+    width:65%;
+}
+
+aside img
+{
+    border-radius:10px 0 0 10px;
+    width:35%;
+    height:150px; /* 140px; */
+}
+
+/* .PAGEAREA */
+.pagearea img
+{
+    border-radius:10px 10px 0 0;
+    width:100%;
+    height:300px;
+}
+
+.hastwo img
+{
+    height:125px;
+}
+
+
+nav
+{
+    margin:0;
+    padding:0;
+    width:fit-content;
+}
+
+.topsection-menu
+{
+    margin:0;
+    padding:0;
+    width:100%;
+    max-width:540px;
+}
+
+.pagemain-member
+{
+    width:64%;
+    margin:0 2% 0 0; /* Assurer un écart avec la partie 'Populaires' */
+    padding:0 2% 2% 2%;
+    border-radius:10px;
+    min-width:320px;
+}
+
+.pagemain-member .collection
+{
+    width:100%;
+    margin:0;
+}
+
+.pagemain-member .card
+{
+    width:100%;
+    margin:0 0 10% 0; /* Assurer un écart vertical entre les cartes */ /* Pas necessaire avec une bonne taille d'images et SPACE-BETWEEN*/
+    padding:1%; /* Bordure */
+}
+
+
 
 .pagearea
 {
     width:96%;
-    margin-left:2%;
-    margin-right:2%;
-    margin-bottom:4%;
+    margin:0 0 4% 0; /* Ecart vertical avec footer */
 }
 
 .pagearea .collection
@@ -243,16 +285,19 @@ aside .card
 
 .pagearea .collection-member
 {
-    width:22%;
-    min-width:250px;
+    width:24%; /* (100/4)-1; 4 colonnes,1=écart entre les colonnes grâce à space-between */
+    padding:0 0 0 0;
+    /* min-width:250px; */
 }
 
 .pagearea .card
 {
     width:100%;
-    margin:0;
-    margin-bottom:5%;
+    margin:0 0 5% 0; /* Ecart vertical entre les cartes*/
 }
+
+
+
 
 
 /* Couleur de fond */
@@ -265,36 +310,33 @@ aside, footer, .pagemain-member
 
 /* Entête avec menu de navigation */
 
-.topsection-menu a:hover
+.topsection-menu li:hover
 {
-    color:#0065FC;
     border-top: 3px solid #0065FC;
 }
 
-nav ul
+.topsection-menu li:hover a
+{
+    color:#0065FC;
+}
+
+.topsection-menu ul
 {
     margin:0;
 }
 
-nav ul a
+.topsection-menu li
 {
-    width:100%;
-    
-}
-
-nav ul li
-{
+    margin:0;
     text-align:center;
-    width:100%;
+    width:150px;
     padding-top:2em;
 }
 
 .topsection-menu :nth-child(3)
 {
-    /* order:-1; /* Changement d'ordre pour l'affichage mobile */
-    text-align:right;
+    /* text-align:right; */
     font-weight:bold;
-    color:#0065FC;
 }
 
 .topsection-logo
@@ -328,35 +370,12 @@ nav ul li
     object-fit:cover;
 }
 
-.pagemain-member img
+.pagemain-member > a p
 {
-    /* border-radius:; */
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    width:250px; /*100%;*/
-    height: 125px;
+    width:max-content;
 }
 
-aside img
-{
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px;
-    width:40%;
-    height:150px;
-}
 
-.pagearea img
-{
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    width:100%;
-    height:300px;
-}
-
-.hastwo img
-{
-    height:125px;
-}
 
 figcaption
 {
@@ -375,6 +394,7 @@ p
 footer ul
 {
     width:33%;
+    padding:0 0 0 2.0em;
 }
 
 
@@ -382,89 +402,78 @@ footer ul
 
 
 
-/* Visuel: champ de saisie */
-.customicone-search
+
+
+/* Apparence: Section supérieure avec champ de recherche et filtres */
+/* Apparence: Champ de saisie */
+.searchbox-champ label
 {
-    /*
-    
-    height:2em;*/
-    font-size:1.2em;
+    font-size:1.33333em;
     background-color:#F2F2F2;
-    text-align:center;
-    width:1em;
-    padding:0.6em;
-    border: 1px solid #F2F2F2;
-    border-top-left-radius:25%;
-    border-bottom-left-radius:25%;
-    border-top-right-radius:0;
-    border-bottom-right-radius:0;
+    border-radius:10px 0 0 10px;
+    padding:0.6em 1.2em 0.6em 1.2em;
 }
 
-.searchbox-champ-saisie
+.searchbox-champ input[type="search"]
 {
     font-size:1.2em;
-    background-color:white;
-    text-align:center;
-    border-top:1px solid #F2F2F2;
-    border-bottom:1px solid #F2F2F2;
-    
-    width:12em;
-    margin:0;
-    padding:0;
-    
-}
-
-.searchbox-champ-saisie input
-{
-    border:0;
-    width:100%;
-    height:100%;
-    padding:0.6em;
     font-weight:bold;
+    height:100%;
+    padding:0.7em 1.5em 0.7em 1.0em;
+    border:1px solid #F2F2F2;
 }
 
-.searchbox-champ-bouton
+.searchbox-champ input[type="button"]
 {
-    font-size:1.2em;
-    text-align:center;
+    font-size:1.0em;
     background-color:#0065FC;
     border-top-right-radius:10px;
     border-bottom-right-radius:10px;
-    
-    border:1px solid #0065FC;
-    
-    margin:0;
-    padding:0;
-    
-}
-
-.searchbox-champ-bouton input
-{
-    background-color:#0065FC;
     border:0;
-    width:100%;
-    height:100%;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-    padding:0.6em;
+    padding:0 1.0em 0 1.0em;
     font-weight:bold;
 }
 
-#champ-bouton
+.searchbox-champ button
 {
-    
+    font-size:1.33333em;
+    background-color:#0065FC;
+    border-radius:10px;
+    border:0;
+    padding:0 1.0em 0 1.0em;
+    display:none;
 }
 
-/* Section supérieure avec champ de recherche et filtres */
+/* Champ de recherche */
 .searchbox-member ul li
 {
     display:flex;
-    height:2.5em;
     border: 3px solid #F2F2F2;
     border-left:0;
     border-radius:1.25em;
-    margin-right:1em;
-    margin-bottom:0.5em;
+    margin:0 0 0.5em 1.0em; /* Ecart horizontal et écart vertical entre les filtres*/
+    padding:0.0em 1.0em 0.0em 0.0em;
+}
+
+.searchbox-member > p
+{
+    padding:1.7em 0 0 0; 
+}
+
+.searchbox-member ul p
+{
+    padding-left:1.0em; /* Ecart entre l'icône du filtre et son texte */
+}
+
+/* Icônes */
+.searchbox-member i
+{
+    background-color:lightblue;
+    border: 2px solid #F2F2F2;
+    border:0;
+    padding:0.7em 0.8em 0.3em 0.8em;
+    border-radius:50%;
+    margin:0 0.0em 0 0; /* L'ecart entre l'icône du filtre et son texte est maintenant controlé par le padding de P */
 }
 
 .searchbox-member ul li:hover
@@ -472,77 +481,27 @@ footer ul
     background-color:#0065FC;
 }
 
-
-
-/* Icônes */
-.fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog, .fa-info-circle
+.searchbox-info p
 {
-    /*color:#0065FC;*/
-    /*background-color:black;
-    height:40px;
-    width:40px;
-    border-radius:20px;*/
+    padding-left:1.0em; /* Ecart entre l'icône Information et son texte */
 }
 
-
-
-
-
-.searchbox-member-text
+.searchbox-info i
 {
-    margin-top:auto;
-    margin-bottom:auto;
-}
-
-.customicone-filtres
-{
-    
-    font-size:1.0em;
-    background-color:lightblue;
+    border: 2px solid #F2F2F2;
+    font-size:0.875em; /* correspondance avec le classe fa-sm de FontAwesome */
+    padding:0.5em 0.8em 0.5em 0.8em;
     border-radius:50%;
-    height:1.75em;
-    width:2.5em;
-    text-align:center;
-    padding-top:0.75em;
-    /*
-    color:#0065FC;
-    
-    text-align:center;
-    width:1.2em;
-    height:2em;
-    padding-right:0.8em;
-    padding-left:0.7em;
-    padding-top:0.7em;
-    padding-bottom:0em;
-    border:0;
-    */
-    position:relative;
-    right:0.3em;
+    margin:0 0.0em 0 0; /* L'ecart entre l'icône Information et son texte est maintenant controlé par le padding de P */
 }
 
-.searchbox-member-filtre-text
-{
-    margin:auto;
-    padding-left:0.5em;
-    padding-right:1em;
-}
 
-.customicone-info
-{
-    color:#0065FC;
-    text-align:center;
-    width:1em;
-    height:1em;
-    padding:0.25em;
-    border: 1px solid #F2F2F2;
-    border-radius:50%;
-}
 
-.searchbox-info-text p
-{
-    margin:0;
-    padding:0.25em;
-}
+
+
+
+
+
 /**/
 .fa-chart-line
 {
@@ -550,27 +509,33 @@ footer ul
     float:right;
 }
 
+
+
+
+
+
+
+
+
 /* Polices */
-.searchbox-member
+.searchbox-member, figcaption p:first-child, footer ul li:first-child, .pagemain-member > a p
 {
     font-weight:bold;
 }
 
-figcaption p:first-child
-{
-    font-weight:bold;
-}
 
-footer ul li:first-child
-{
-    font-weight:bold;
-}
+
+
+
+
+
 
 /* RESPONSIVE DESIGN */
 /* aspect-ratio and orientation and resolution */
 /* Responsive design: tous les types d'écrans de moins de 320px */
 @media all and (max-width: 320px)
 {
+    
     .topsection-menu
     {
         flex-direction:row;
@@ -579,11 +544,15 @@ footer ul li:first-child
     .topsection-menu :nth-child(3)
     {
         order:-1;
-        
+        display:none;
     }
-    #champ-bouton
+    .searchbox-champ input[type="button"]
     {
         display:none;
+    }
+    .searchbox-champ button
+    {
+        display:block;
     }
     .searchbox-member
     {
@@ -597,7 +566,7 @@ footer ul li:first-child
     {
         width:100%;
         margin:0;
-        margin-bottom:1%;
+        margin-bottom:1%; /* Ecart vertical avec la partie hébergements */
         border-radius:0;
     }
     .pagemain-member
@@ -617,7 +586,7 @@ footer ul li:first-child
     }
 }
 /* Responsive design: tous les types d'écrans de moins de 1024px */
-@media all and (max-width: 1024px)
+@media all and (max-width: 1023px)
 {
 
 }
@@ -628,7 +597,11 @@ footer ul li:first-child
 
 }
 /* Responsive design: seulement les écrans de largeur entre px et px en orientation portrait */
-@media only screen and (min-device-width:400px) and (max-device-width:1100px) and (orientation:portrait)
+@media only screen and (min-device-width:400px) and (max-device-width:1100px) /* and (orientation:portrait) */
 {
-
+    *
+    {
+        background-color:red;
+    }
+    
 }
