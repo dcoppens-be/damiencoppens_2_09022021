@@ -202,19 +202,23 @@ aside .collection
 aside .card
 {
     width:100%;
+    max-width:325px;
     margin:0 0 5% 0; /* Ecart vertical entre les cartes */
     padding:1%; /* Bordure */
 }
 
 aside figcaption
 {
-    width:65%;
+    width:60%;
+    /* max-width:180px; */
+    /* width:150px; */
 }
 
 aside img
 {
     border-radius:10px 0 0 10px;
-    width:35%;
+    width:40%;
+    /* width:150px; */
     height:150px; /* 140px; */
 }
 
@@ -223,6 +227,7 @@ aside img
 {
     border-radius:10px 10px 0 0;
     width:100%;
+
     height:300px;
 }
 
@@ -287,7 +292,7 @@ nav
 {
     width:24%; /* (100/4)-1; 4 colonnes,1=écart entre les colonnes grâce à space-between */
     padding:0 0 0 0;
-    /* min-width:250px; */
+    min-width:250px; /* Taille minimale enclenchant l'effet WRAP */
 }
 
 .pagearea .card
@@ -469,11 +474,12 @@ footer ul
 .searchbox-member i
 {
     background-color:lightblue;
-    border: 2px solid #F2F2F2;
+    box-shadow: 0 0 0 2.5px lightblue;
     border:0;
     padding:0.7em 0.8em 0.3em 0.8em;
     border-radius:50%;
     margin:0 0.0em 0 0; /* L'ecart entre l'icône du filtre et son texte est maintenant controlé par le padding de P */
+    
 }
 
 .searchbox-member ul li:hover
@@ -509,7 +515,10 @@ footer ul
     float:right;
 }
 
-
+aside .card-rating
+{
+    padding:2.5em 0 0 0;
+}
 
 
 
@@ -535,7 +544,10 @@ footer ul
 /* Responsive design: tous les types d'écrans de moins de 320px */
 @media all and (max-width: 320px)
 {
-    
+    header, section
+    {
+        padding:0;
+    }
     .topsection-menu
     {
         flex-direction:row;
@@ -575,6 +587,14 @@ footer ul
         margin:0;
         /* margin-right:0; */
         background-color:white;
+    }
+    .pagearea img
+    {
+        height:125px;
+    }
+    .pagearea .collection-member
+    {
+        width:100%;
     }
     footer
     {
