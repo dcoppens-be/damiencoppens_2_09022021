@@ -142,7 +142,7 @@ header
 {
     display:flex;
     justify-content:space-between;
-    /* flex-wrap:wrap; */
+    flex-wrap:wrap;
 }
 
 /* ASIDE - Disposition du contenu de la carte: figure à gauche, figcaption à droite */
@@ -186,11 +186,11 @@ footer
 /* ASIDE */
 aside
 {
-    width:34%;
+    width:30%;
     margin:0 0 0 0; /* L'écart avec la partie 'hébergements' est définie par la marge de PAGEMAIN-MEMBER*/
     padding:0 2% 2% 2%;
     border-radius:10px;
-    min-width:320px;
+    min-width:290px;
 }
 
 aside .collection
@@ -201,8 +201,8 @@ aside .collection
 
 aside .card
 {
-    width:100%;
-    max-width:325px;
+    width:98%;
+    max-width:325px; /* Pour éviter le problème de cartes de différentes largeur sur Firefox */
     margin:0 0 5% 0; /* Ecart vertical entre les cartes */
     padding:1%; /* Bordure */
 }
@@ -254,11 +254,11 @@ nav
 
 .pagemain-member
 {
-    width:64%;
+    width:60%;
     margin:0 2% 0 0; /* Assurer un écart avec la partie 'Populaires' */
     padding:0 2% 2% 2%;
     border-radius:10px;
-    min-width:320px;
+    min-width:290px;
 }
 
 .pagemain-member .collection
@@ -335,10 +335,10 @@ aside, footer, .pagemain-member
     margin:0;
     text-align:center;
     width:150px;
-    padding-top:2em;
+    padding:2em 0 1em 0;
 }
 
-.topsection-menu :nth-child(3)
+.topsection-menu li:nth-child(3)
 {
     /* text-align:right; */
     font-weight:bold;
@@ -423,7 +423,7 @@ footer ul
 {
     font-size:1.2em;
     font-weight:bold;
-    height:100%;
+    /* height:100%; */
     padding:0.7em 1.5em 0.7em 1.0em;
     border:1px solid #F2F2F2;
 }
@@ -542,21 +542,39 @@ aside .card-rating
 /* RESPONSIVE DESIGN */
 /* aspect-ratio and orientation and resolution */
 /* Responsive design: tous les types d'écrans de moins de 320px */
-@media all and (max-width: 320px)
+@media all and (max-width: 425px)
 {
-    header, section
+    .pagemain
     {
         padding:0;
+    }
+    header
+    {
+        justify-content:flex-start; /* Tentative pour avoir 'S'inscire' sur la même ligne que le logo */
     }
     .topsection-menu
     {
         flex-direction:row;
         flex-wrap:wrap;
     }
-    .topsection-menu :nth-child(3)
+    .topsection-menu li
+    {
+        border-bottom: 3px solid #F2F2F2;
+    }
+    .topsection-menu li:nth-child(1)
+    {
+        border-bottom:3px solid #0065FC;
+        color:#0065FC;
+    }
+    .topsection-menu li:nth-child(3)
     {
         order:-1;
-        display:none;
+        /* display:none; */
+        border-bottom:0;
+    }
+    .searchbox-champ
+    {
+        font-size:0.75em; /* 0.9em; */
     }
     .searchbox-champ input[type="button"]
     {
@@ -574,19 +592,30 @@ aside .card-rating
     {
         flex-direction:column-reverse;
     }
-    aside
-    {
-        width:100%;
-        margin:0;
-        margin-bottom:1%; /* Ecart vertical avec la partie hébergements */
-        border-radius:0;
-    }
     .pagemain-member
     {
-        width:100%;
+        width:96%;
         margin:0;
         /* margin-right:0; */
         background-color:white;
+    }
+    .pagemain-member img
+    {
+        width:100%;
+    }
+    aside
+    {
+        width:96%;
+        margin:0 0 1% 0; /* Ecart vertical avec la partie hébergements */
+        border-radius:0;
+    }
+    aside .card
+    {
+        max-width:none; /* Fixer une largeur maximum pour éviter le problème des cartes 'Activités' de largeurs différentes sur Firefox */
+    }
+    .pagearea
+    {
+        /* width:96%; */
     }
     .pagearea img
     {
@@ -605,6 +634,55 @@ aside .card-rating
         width:100%;
     }
 }
+
+/* Responsive design: seulement les écrans de largeur entre px et px en orientation portrait */
+@media only screen and (min-device-width:426px) and (max-device-width:1023px) /* and (orientation:portrait) */
+{
+    .pagemain
+    {
+        flex-direction:column-reverse;
+    }
+    aside
+    {
+        width:96%;
+        margin:0 0 1% 0; /* Ecart vertical avec la partie hébergements */
+        border-radius:0;
+    }
+    aside .collection
+    {
+        justify-content:space-around;
+    }
+    aside .card
+    {
+        flex-direction:column;
+        width:170px;
+    }
+    aside figcaption
+    {
+        width:100%;
+    }
+
+    aside img
+    {
+        border-radius: 10px 10px 0 0;
+        width:100%;
+    }
+    aside .card-rating
+    {
+    padding:0em 0 0 0;
+    }
+    .pagemain-member
+    {
+        width:96%;
+        margin:0;
+    }
+    .pagearea .collection-member
+    {
+        width:49%;
+    }
+    
+}
+
 /* Responsive design: tous les types d'écrans de moins de 1024px */
 @media all and (max-width: 1023px)
 {
@@ -615,13 +693,4 @@ aside .card-rating
 @media all and (max-device-width: 480px)
 {
 
-}
-/* Responsive design: seulement les écrans de largeur entre px et px en orientation portrait */
-@media only screen and (min-device-width:400px) and (max-device-width:1100px) /* and (orientation:portrait) */
-{
-    *
-    {
-        background-color:red;
-    }
-    
 }
