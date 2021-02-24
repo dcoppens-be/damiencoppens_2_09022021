@@ -487,9 +487,10 @@ footer ul
     background-color:#0065FC;
 }
 
-.searchbox-info p
+.searchbox-info p:nth-child(2)
 {
     padding-left:1.0em; /* Ecart entre l'icône Information et son texte */
+    padding-top:1.0em;
 }
 
 .searchbox-info i
@@ -541,8 +542,8 @@ aside .card-rating
 
 /* RESPONSIVE DESIGN */
 /* aspect-ratio and orientation and resolution */
-/* Responsive design: tous les types d'écrans de moins de 320px */
-@media all and (max-width: 425px)
+/* Responsive design: tous les types d'écrans de moins de 426px */
+@media all and (min-width: 320px) and (max-width: 425px)
 {
     .pagemain
     {
@@ -635,8 +636,8 @@ aside .card-rating
     }
 }
 
-/* Responsive design: seulement les écrans de largeur entre px et px en orientation portrait */
-@media only screen and (min-device-width:426px) and (max-device-width:1023px) /* and (orientation:portrait) */
+/* Responsive design: seulement les écrans de largeur entre 426px et 1023px */
+@media only screen and (min-width:426px) and (max-width:1023px) /* and (orientation:portrait) */
 {
     .pagemain
     {
@@ -681,16 +682,4 @@ aside .card-rating
         width:49%;
     }
     
-}
-
-/* Responsive design: tous les types d'écrans de moins de 1024px */
-@media all and (max-width: 1023px)
-{
-
-}
-
-/* Responsive design: tous les types d'écrans dont la largeur du périphérique est inférieure à 480px */
-@media all and (max-device-width: 480px)
-{
-
 }
