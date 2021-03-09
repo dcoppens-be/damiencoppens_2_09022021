@@ -1,36 +1,74 @@
-/* POLICES*/
-/* Recours à la police Raleway de Google Fonts: 3 méthodes possibles */
-/* (1) Liaison dans le HTML */
-/* (2) Import dans le CSS */
-/* (3) Utilisation directe des fichiers aux différents formats .eot .woff .woff2 .svg .ttf */ 
-
-/* (2) Import of Goolge font, Raleway Regular 400, if not link in the HTML */
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); */
-
-/* (3) Définition de la police et liens avec les fichiers aux différents formats */
-/*
-@font-face {
-    font-family: 'ralewaythin';
-    src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot');
-    src: url('raleway-variablefont/raleway-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
-         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2 supports variations'),
-         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff2') format('woff2-variations'),
-         url('raleway-variablefont/raleway-variablefont_wght-webfont.woff') format('woff'),
-         url('raleway-variablefont/raleway-variablefont_wght-webfont.svg#ralewaythin') format('svg');
-    font-weight:bolder;
-    font-stretch:normal;
-    font-style: normal;
-}
-*/
-
+/* POLICES */
 /* Application de la police à toute la page avec le sélecteur universel */
 *
 {
-    /*font-family:ralewaythin, raleway,"Times New Roman",Verdana,Arial,sans-serif;*/
     font-family: 'Raleway', sans-serif;
 }
 
+/* Graisse/épaisseur */
+.searchbox-member, figcaption p:first-child, footer ul li:first-child, .pagemain-member > a p
+{
+    font-weight:bold;
+}
 
+
+
+/* INITIALISATION des comportements de base non souhaités */
+
+a /* Suppression des caractéristiques initialies des liens: mise en forme et couleur */
+{
+    text-decoration:none; 
+    color:black;
+}
+
+ul /* Suppression des puces des listes non ordonnées */
+{
+    list-style-type:none;
+}
+
+p /* Suppression des marges de tous les paragraphes */
+{
+    margin:0;
+}
+
+
+
+/* ESPACE */ 
+/* Forcer le corps de la page à occuper toute la largeur, avec remise à 0 du margin et du padding */
+body
+{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+
+
+/* ALIGNEMENT */
+/* Bords à gauche et à droite de la page, à l'exception du footer*/
+header, section
+{
+    padding:0 2% 0 2%;
+}
+
+/* ESPACEMENT vertical */
+section
+{
+    margin:0 0 2% 0; /* Ecart vertical */
+}
+
+
+
+/* Couleur de FOND */
+aside, footer, .pagemain-member
+{
+    background-color:#F2F2F2;
+}
+
+
+
+
+/* CLASSES GENERIQUES propres à ce site */
 
 /* Classe générique à cette maquette .isblue */
 /* Mise en bleu de toutes les étoiles d'évaluation avant l'action de la classe ISGREY */ 
@@ -51,48 +89,11 @@
     color:white;
 }
 
-
-
-/* Forcer le corps de la page à occuper toute la largeur, avec remise à 0 du margin et du padding */
-body
-{
-    width:100%;
-    margin:0;
-    padding:0;
-}
-
-/* Bords à gauche et à droite de la page, à l'exception du footer*/
-header, section
-{
-    padding:0 2% 0 2%;
-}
-
-/* Reset des comportements de base non souhaités */
-
-/* Suppression des caractéristiques initialies des liens: mise en forme et couleur */
-a
-{
-    text-decoration:none; 
-    color:black;
-}
-
-/* Suppression des puces des listes non ordonnées */
-ul
-{
-    list-style-type:none;
-}
-
-
-
 /* Classes communes à tous les ensembles de cartes: hébergements, populaires, activités */
 /* .COLLECTION */
 /* .CARD */
 
-
-
-
-/* Agencement des éléments*/
-/* Agencement avec FLEX */
+/* Agencement */
 .collection
 {
     display:flex;
@@ -101,7 +102,43 @@ ul
     align-content:space-between;
 }
 
-/* Entête */
+.card
+{
+    background-color: white;
+    
+    border-radius:10px;
+    box-shadow:2px 2px 4px black;
+}
+
+.card img
+{
+    object-fit:cover; /* Affichage des images avec conservation du rapport hauteur/largeur */
+}
+
+.collection-member /* Partie 'Activités': regroupement de 2 images */
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+figcaption
+{
+    padding-left:10px;
+}
+
+figcaption p
+{
+    padding:8px 0 8px 0;
+}
+
+
+
+
+/* HEADER */
+/* Entête avec menu de navigation */
+
+/* Agencement */
 header
 {
     display:flex;
@@ -109,133 +146,16 @@ header
     flex-wrap:wrap;
 }
 
-.topsection-menu
+.topsection-logo
 {
-    display:flex;
-    /* flex-wrap:wrap; */
+    width:fit-content;
 }
 
-/* Section supérieure avec champ de saisie et filtres */
-.searchbox-info
+.topsection-logo img
 {
-    display:flex;
+    width:154px;
+    height:72px;
 }
-
-.searchbox-champ
-{
-    display:flex;
-}
-
-.searchbox-member
-{
-    display:flex;
-}
-
-.searchbox-member ul
-{
-    display:flex;
-    flex-wrap:wrap;
-}
-
-/* Section hébergements */
-.pagemain
-{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-}
-
-/* ASIDE - Disposition du contenu de la carte: figure à gauche, figcaption à droite */
-aside .card
-{
-    display:flex;
-    justify-content:flex-start;
-}
-
-/* Partie 'Activités' */
-/* Disposition du rassemblement de 2 images */
-.collection-member
-{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-/* FOOTER - Disposition des 3 listes l'une à côté de l'autre*/
-footer
-{
-    display:flex;
-}
-
-
-
-
-
-
-
-
-/* Dimensionnement des parties, margin & padding */
-/* .PAGEMAIN-MEMBER*/
-.pagemain-member img
-{
-    border-radius: 10px 10px 0 0;
-    width:225px; /* 200px; 250 px; */
-    height: 115px;
-}
-
-/* ASIDE */
-aside
-{
-    width:30%;
-    margin:0 0 0 0; /* L'écart avec la partie 'hébergements' est définie par la marge de PAGEMAIN-MEMBER*/
-    padding:0 2% 2% 2%;
-    border-radius:10px;
-    min-width:290px;
-}
-
-aside .collection
-{
-    width:100%;
-    margin:0;
-}
-
-aside .card
-{
-    width:98%;
-    max-width:325px; /* Pour éviter le problème de cartes de différentes largeur sur Firefox */
-    margin:0 0 5% 0; /* Ecart vertical entre les cartes */
-    padding:1%; /* Bordure */
-}
-
-aside figcaption
-{
-    width:60%;
-    /* max-width:180px; */
-    /* width:150px; */
-}
-
-aside img
-{
-    border-radius:10px 0 0 10px;
-    width:40%;
-    /* width:150px; */
-    height:150px; /* 140px; */
-}
-
-/* .PAGEAREA */
-.pagearea img
-{
-    border-radius:10px 10px 0 0;
-    width:100%;
-
-    height:300px;
-}
-
-.hastwo img
-{
-    height:125px;
-}
-
 
 nav
 {
@@ -246,83 +166,12 @@ nav
 
 .topsection-menu
 {
+    display:flex;
+    /* flex-wrap:wrap; */
     margin:0;
     padding:0;
-    width:100%;
-    max-width:540px;
-}
-
-.pagemain-member
-{
-    width:60%;
-    margin:0 2% 0 0; /* Assurer un écart avec la partie 'Populaires' */
-    padding:0 2% 2% 2%;
-    border-radius:10px;
-    min-width:290px;
-}
-
-.pagemain-member .collection
-{
-    width:100%;
-    margin:0;
-}
-
-.pagemain-member .card
-{
-    width:100%;
-    margin:0 0 10% 0; /* Assurer un écart vertical entre les cartes */ /* Pas necessaire avec une bonne taille d'images et SPACE-BETWEEN*/
-    padding:1%; /* Bordure */
-}
-
-
-
-.pagearea
-{
-    width:96%;
-    margin:0 0 4% 0; /* Ecart vertical avec footer */
-}
-
-.pagearea .collection
-{
-    width:100%;
-    margin:0;
-}
-
-.pagearea .collection-member
-{
-    width:24%; /* (100/4)-1; 4 colonnes,1=écart entre les colonnes grâce à space-between */
-    padding:0 0 0 0;
-    min-width:250px; /* Taille minimale enclenchant l'effet WRAP */
-}
-
-.pagearea .card
-{
-    width:100%;
-    margin:0 0 5% 0; /* Ecart vertical entre les cartes*/
-}
-
-
-
-
-
-/* Couleur de fond */
-aside, footer, .pagemain-member
-{
-    background-color:#F2F2F2;
-}
-
-
-
-/* Entête avec menu de navigation */
-
-.topsection-menu li:hover
-{
-    border-top: 3px solid #0065FC;
-}
-
-.topsection-menu li:hover a
-{
-    color:#0065FC;
+    /* width:100%;
+    max-width:540px; */
 }
 
 .topsection-menu ul
@@ -344,72 +193,50 @@ aside, footer, .pagemain-member
     font-weight:bold;
 }
 
-.topsection-logo
+.topsection-menu li:hover
 {
-    width:fit-content;
+    border-top: 3px solid #0065FC;
 }
 
-.topsection-logo img
+.topsection-menu li:hover a
 {
-    width:154px;
-    height:72px;
-}
-
-
-
-
-
-/* Cartes */
-.card
-{
-    background-color: white;
-    
-    border-radius:10px;
-    box-shadow:2px 2px 4px black;
-    /*padding:1%;  */ 
-}
-
-/* Affichage des images avec conservation du rapport hauteur/largeur */
-.card img
-{
-    object-fit:cover;
-}
-
-.pagemain-member > a p
-{
-    width:max-content;
-}
-
-
-
-figcaption
-{
-    padding-left:10px;
-}
-
-p
-{
-    margin:0;
-    padding-top:8px;
-    padding-bottom:8px;
-}
-
-
-/* Pied de page */
-footer ul
-{
-    width:33%;
-    padding:0 0 0 2.0em;
+    color:#0065FC;
 }
 
 
 
 
+/* SECTION Searchbox */
+/* Section supérieure avec champ de saisie/recherche et filtres */
 
+/* Agencement */
+.searchbox-info
+{
+    display:flex;
+}
 
+.searchbox-champ
+{
+    display:flex;
+}
 
+.searchbox-member
+{
+    display:flex;
+}
 
-/* Apparence: Section supérieure avec champ de recherche et filtres */
+.searchbox-member ul
+{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* Dimensionnement, margin & padding */
+.searchbox > p
+{
+    padding:0 0 1.0em 0; /* Ecart vertical entre le premier paragraphe et le champ de recherche */
+}
+
 /* Apparence: Champ de saisie */
 .searchbox-champ label
 {
@@ -449,7 +276,7 @@ footer ul
     display:none;
 }
 
-/* Champ de recherche */
+/* Apparence: Filtres */
 .searchbox-member ul li
 {
     display:flex;
@@ -462,24 +289,22 @@ footer ul
 
 .searchbox-member > p
 {
-    padding:1.7em 0 0 0; 
+    padding:1.7em 0 0 0; /* Alignement vertical du texte 'Filtres' */
 }
 
 .searchbox-member ul p
 {
-    padding-left:1.0em; /* Ecart entre l'icône du filtre et son texte */
+    padding:0.6em 0 0.6em 1.0em;
 }
 
-/* Icônes */
 .searchbox-member i
 {
-    background-color:lightblue;
-    box-shadow: 0 0 0 2.5px lightblue;
+    background-color:#DEEBFF;
+    box-shadow: 0 0 0 2.5px #DEEBFF;
     border:0;
     padding:0.7em 0.8em 0.3em 0.8em;
     border-radius:50%;
     margin:0 0.0em 0 0; /* L'ecart entre l'icône du filtre et son texte est maintenant controlé par le padding de P */
-    
 }
 
 .searchbox-member ul li:hover
@@ -487,10 +312,10 @@ footer ul
     background-color:#0065FC;
 }
 
+/* Apparence: Information */
 .searchbox-info p:nth-child(2)
 {
-    padding-left:1.0em; /* Ecart entre l'icône Information et son texte */
-    padding-top:1.0em;
+    padding:0.5em 0 0 1.0em; /* Ecart entre l'icône Information et son texte */
 }
 
 .searchbox-info i
@@ -505,18 +330,112 @@ footer ul
 
 
 
+/* SECTION Pagemain */
+/* Hébergements */
+
+/* Agencement */
+.pagemain
+{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
 
 
+/* DIV Pagemain-member*/
+
+/* Dimensionnement des parties, margin & padding */
+.pagemain-member
+{
+    width:60%;
+    margin:0 2% 0 0; /* Assurer un écart avec la partie 'Populaires' */
+    padding:0 2% 2% 2%;
+    border-radius:10px;
+    min-width:290px;
+}
+
+.pagemain-member .collection
+{
+    width:100%;
+    margin:0;
+}
+
+.pagemain-member .card
+{
+    width:100%;
+    margin:0 0 10% 0; /* Assurer un écart vertical entre les cartes */ /* Pas necessaire avec une bonne taille d'images et SPACE-BETWEEN*/
+    padding:1%; /* Bordure */
+}
+
+.pagemain-member img
+{
+    border-radius: 10px 10px 0 0;
+    width:225px; /* 200px; 250 px; */
+    height: 115px;
+}
+
+.pagemain-member > a p /* Texte 'Afficher plus' */
+{
+    width:max-content;
+}
 
 
-/**/
-.fa-chart-line
+/* ASIDE */
+/* Les plus populaires */
+
+/* Agencement */
+aside .card
+{
+    display:flex; /* Disposition du contenu de la carte: figure à gauche, figcaption à droite */
+    justify-content:flex-start;
+}
+
+/* Dimensionnement des parties, margin & padding */
+aside
+{
+    width:30%;
+    margin:0 0 0 0; /* L'écart avec la partie 'hébergements' est définie par la marge de PAGEMAIN-MEMBER*/
+    padding:0 2% 2% 2%;
+    border-radius:10px;
+    min-width:290px;
+}
+
+aside .collection
+{
+    width:100%;
+    margin:0;
+}
+
+aside .card
+{
+    width:98%;
+    max-width:325px; /* Pour éviter le problème de cartes de différentes largeur sur Firefox */
+    margin:0 0 5% 0; /* Ecart vertical entre les cartes */
+    padding:1%; /* Bordure */
+}
+
+aside figcaption
+{
+    width:60%;
+    /* max-width:180px; */
+    /* width:150px; */
+}
+
+aside img
+{
+    border-radius:10px 0 0 10px;
+    width:40%;
+    /* width:150px; */
+    height:150px; /* 140px; */
+}
+
+.fa-chart-line /* Icône à droite*/
 {
     display:block;
     float:right;
 }
 
-aside .card-rating
+aside .card-rating /* Etoiles d'évaluation en bas */
 {
     padding:2.5em 0 0 0;
 }
@@ -524,14 +443,67 @@ aside .card-rating
 
 
 
+/* SECTION Pagearea */
+/* Activités */
 
-
-
-/* Polices */
-.searchbox-member, figcaption p:first-child, footer ul li:first-child, .pagemain-member > a p
+/* Dimensionnement des parties, margin & padding */
+.pagearea
 {
-    font-weight:bold;
+    width:96%;
 }
+
+.pagearea .collection
+{
+    width:100%;
+    margin:0;
+}
+
+.pagearea .collection-member
+{
+    width:24%; /* (100/4)-1; 4 colonnes,1=écart entre les colonnes grâce à space-between */
+    padding:0 0 0 0;
+    min-width:250px; /* Taille minimale enclenchant l'effet WRAP */
+}
+
+.pagearea .card
+{
+    width:100%;
+    margin:0 0 5% 0; /* Ecart vertical entre les cartes*/
+}
+
+.pagearea img
+{
+    border-radius:10px 10px 0 0;
+    width:100%;
+
+    height:300px;
+}
+
+.hastwo img
+{
+    height:125px;
+}
+
+
+
+
+/* FOOTER */
+/* Pied de page */
+
+/* Agencement */
+footer
+{
+    display:flex; /* Disposition des 3 listes l'une à côté de l'autre */
+}
+
+/* Dimensionnement des parties, margin & padding */
+footer ul
+{
+    width:33%;
+    padding:0 0 0 2.0em;
+}
+
+
 
 
 
@@ -551,6 +523,7 @@ aside .card-rating
     }
     header
     {
+        flex-wrap:nowrap;
         justify-content:flex-start; /* Tentative pour avoir 'S'inscire' sur la même ligne que le logo */
     }
     .topsection-menu
@@ -567,12 +540,12 @@ aside .card-rating
         border-bottom:3px solid #0065FC;
         color:#0065FC;
     }
+    /*
     .topsection-menu li:nth-child(3)
     {
         order:-1;
-        /* display:none; */
         border-bottom:0;
-    }
+    } */
     .searchbox-champ
     {
         font-size:0.75em; /* 0.9em; */
