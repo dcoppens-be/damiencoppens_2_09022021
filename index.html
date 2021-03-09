@@ -2,39 +2,26 @@
 <html lang="fr">
     <head>
         <!-- titre de la page HTLM apparaissant dans l'onglet du navigateur -->
-        <title> Votre hébergement de vacances - Reservia - Site de réservation de logements</title>
+        <title>Votre hébergement de vacances - Reservia - Site de réservation de logements</title>
 
         <!-- Métadonnées de la page web-->
         <!-- Définition de la description-->
-        <meta name="description" content=" location logement hébergement hôtel auberge chambre d'hôte activité voyage touriste" />
+        <meta name="description" content="Réservez facilement votre hébergement et vos activités partout en France. La plateforme Reservia vous offre un large choix de logements à la location, adapté à vos goûts: hôtel, auberge, chambre d'hôte. Partenaire de vos vacances, Reservia vous propose également de nobreuses activités touristiques pour un séjour exceptionnel" />
         <!-- Définition de l'encodage de ce fichier HTML-->
         <meta charset="utf-8" />
         <!-- Définition de la largeur de la fenêtre du navigateur sur mobile, fixé ici à la largeur de l'écran -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!--
-        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
-        -->
 
         <!-- Liaison avec le(s) fichier(s) CSS -->
-        <!-- CSS personnalise -->
+        <!-- CSS personnalisé -->
         <link rel="stylesheet" href="style.css"/>
         <!-- Goolge font: Raleway Regular 400 -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-        <!-- CSS FontAwesome -->
-        <!--
-        <link href="fontawesome-free-5.15.2-web/css/solid.css" rel="stylesheet">
-        <link href="fontawesome-free-5.15.2-web/css/regular.css" rel="stylesheet">
-        -->
 
         <!-- Liaison avec le(s) fichier(s) JavaScript -->
         <!-- JS FontAwesome -->
         <script src="https://kit.fontawesome.com/44df1ab642.js" crossorigin="anonymous"></script>
-        <!--
-        <script defer src="fontawesome-free-5.15.2-web/js/solid.js"></script>
-        <script defer src="fontawesome-free-5.15.2-web/js/regular.js"></script>
-        <script defer src="fontawesome-free-5.15.2-web/js/fontawesome.js"></script>
-        -->
 
     </head>
 
@@ -79,34 +66,17 @@
 
 
             <section class="searchbox">
+
                 <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
+                
                 <p>
                     En plein centre ville ou en pleine nature
                 </p>
-                <!-- Formulaire en construction 
-                Prochaines etapes
-                FORM: definition de METHOD, ACTION
-                INPUT text: definition de NAME, ID, SIZE, MAXLENGTH, PLACEHOLDER, REQUIRED
-                LABEL: definition de FOR -->
-                <!--
-                <form class="searchbox-champ" role="search">
-                    <div class="customicone-search"><label for="ville-village" id="champ-label"><i class="fas fa-map-marker-alt"></i></label></div>
-                    <div class="searchbox-champ-saisie"><input type="search" name="ville-village" id="ville-village" placeholder="Marseille, France" autofocus aria-label="Destination" list="places" /></div>
-                    <datalist id="places">
-                        <option>Marseille, France</option>
-                        <option>Lille, France</option>
-                    </datalist>
-                    <div class="searchbox-champ-bouton"><input type="button" value="Rechercher" id="champ-bouton" class="iswhite" /></div>
-                    <div class="searchbox-champ-bouton"><button><i class="fas fa-search"></i></button></div>
-                    -->
 
-                    <!--<div class="searchbox-champ-bouton"><input type="button" value="" id="champ-bouton"/></div>-->
-                    <!--
-                </form>
-                -->
-            
+                <!-- Fonctionnalité de recherche
+                FORM: définition de METHOD, ACTION
+                INPUT search: définition de SIZE, MAXLENGTH, REQUIRED -->
                 <form class="searchbox-champ" role="search">
-                    
                     <label for="ville-village" id="champ-label"><i class="fas fa-map-marker-alt"></i></label>
                     <input type="search" name="ville-village" id="ville-village" placeholder="Marseille, France" autofocus aria-label="Destination" list="places" />
                     <datalist id="places">
@@ -115,10 +85,8 @@
                     </datalist>
                     <input type="button" value="Rechercher" id="champ-bouton" class="iswhite" />
                     <button><i class="fas fa-search iswhite"></i></button>
-                    
                 </form>
     
-
                 <div class="searchbox-member">
                     <p>Filtres</p>
                     <ul>
@@ -129,12 +97,9 @@
                     </ul>
                 </div>
                 
-
                 <div class="searchbox-info">
-
                     <p> <i class="fas fa-info isblue"></i> </p>
                     <p> Plus de 500 logements sont disponibles dans cette ville</p>
-
                 </div>
 
             </section>
@@ -142,7 +107,9 @@
     
 
             <section class="pagemain">
+
                 <div class="pagemain-member">
+
                     <h2 id="ancre1">Hébergements à Marseille</h2>
                 
                     <div class="collection">
@@ -235,8 +202,8 @@
                 </div>
     
     
-    
-                <aside> <!-- site-main-sidebar sidebar -->
+                <aside>
+
                     <h2>Les plus populaires <i class="fas fa-chart-line"></i> </h2>
     
                     <div class="collection">
@@ -285,26 +252,28 @@
                     </div>
     
                 </aside>
+
             </section>
     
     
 
             <section class="pagearea">
+
                 <h2 id="ancre2">Activités à Marseille</h2>
         
                 <div class="collection">
                     
                     <div class="collection-member">
-                    <a href="#">
-                        <figure class="card">
-                            <img src="images/activites/4_small/marseille-vieux-port-activite.jpg"
-                                alt="Vieux Port - Activité" title="Cliquable" loading="lazy" width="702" height="468"/>
-                            <figcaption>
-                                <p>Vieux Port</p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
+                        <a href="#">
+                            <figure class="card">
+                                <img src="images/activites/4_small/marseille-vieux-port-activite.jpg" alt="Vieux Port - Activité"
+                                    title="Cliquable" loading="lazy" width="702" height="468" />
+                                <figcaption>
+                                    <p>Vieux Port</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
                 
 
                     <div class="collection-member hastwo">
@@ -329,17 +298,20 @@
                         </a>
                     </div>
 
+
                     <div class="collection-member">
-                    <a href="#">
-                        <figure class="card">
-                            <img src="images/activites/4_small/marseille-parc-national-calanques-activite.jpg"
-                                alt="Parc National des Calanques - Activité" title="Cliquable" loading="lazy" width="606" height="402"/>
-                            <figcaption>
-                                <p>Parc National des Calanques</p>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
+                        <a href="#">
+                            <figure class="card">
+                                <img src="images/activites/4_small/marseille-parc-national-calanques-activite.jpg"
+                                    alt="Parc National des Calanques - Activité" title="Cliquable" loading="lazy" width="606"
+                                    height="402" />
+                                <figcaption>
+                                    <p>Parc National des Calanques</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
 
                     <div class="collection-member hastwo">
                         <a href="#">
@@ -362,6 +334,7 @@
                             </figure>
                         </a>
                     </div>
+
                 </div>
     
             </section>
@@ -394,8 +367,11 @@
                     <li><a href="#">Centre d'aide</a></li>
                     <li><a href="#">Nous contacter</a></li>
                 </ul>
+
             </footer>
+
         </div>
+        
     </body>
     
 </html>
