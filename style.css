@@ -139,68 +139,73 @@ figcaption p
 /* Entête avec menu de navigation */
 
 /* Agencement */
-header
+nav
 {
+    width:100%;
+}
+
+.topsection-menu2
+{
+    padding:0;
+    /* width:100%; */
     display:flex;
-    justify-content:space-between;
     flex-wrap:wrap;
 }
 
-.topsection-logo
+.topsection-menu2 li
 {
-    width:fit-content;
-}
-
-.topsection-logo img
-{
-    width:154px;
-    height:72px;
-}
-
-nav
-{
-    margin:0;
-    padding:0;
-    width:fit-content;
-}
-
-.topsection-menu
-{
+    width:160px;
+    height:75px;
     display:flex;
-    /* flex-wrap:wrap; */
-    margin:0;
-    padding:0;
-    /* width:100%;
-    max-width:540px; */
+    /* align-items:center;
+    justify-content:center; */
+
+     /* padding:2em 0 1em 0; */
 }
 
-.topsection-menu ul
+.topsection-menu2 li a
 {
-    margin:0;
+    margin:auto;
 }
 
-.topsection-menu li
+.topsection-menu2 img
 {
-    margin:0;
-    text-align:center;
-    width:150px;
-    padding:2em 0 1em 0;
+    width:100%;
+    height:auto;
+
+    /* width:154px;
+    height:72px; */
 }
 
-.topsection-menu li:nth-child(3)
+.totheleft
 {
-    /* text-align:right; */
-    font-weight:bold;
+    margin-left:auto;
 }
 
-.topsection-menu li:hover
+.topsection-menu2 li:nth-child(2):hover
 {
     border-top: 3px solid #0065FC;
 }
 
-.topsection-menu li:hover a
+.topsection-menu2 li:nth-child(2):hover a
 {
     color:#0065FC;
+}
+
+.topsection-menu2 li:nth-child(3):hover
+{
+    border-top: 3px solid #0065FC;
+}
+
+.topsection-menu2 li:nth-child(3):hover a
+{
+    color:#0065FC;
+}
+
+.topsection-menu2 li:nth-child(4)
+{
+    /* text-align:right; */
+    font-weight:bold; /* Texte 'S'inscrire' en gras */
 }
 
 
@@ -310,6 +315,7 @@ nav
 .searchbox-member ul li:hover
 {
     background-color:#0065FC;
+    color:white;
 }
 
 /* Apparence: Information */
@@ -360,9 +366,18 @@ nav
     margin:0;
 }
 
+
+.pagemain-member a
+{
+
+}
+
+
 .pagemain-member .card
 {
-    width:100%;
+    /* width:100%; */
+    width:225px; /* 200px; 250 px; */
+    
     margin:0 0 10% 0; /* Assurer un écart vertical entre les cartes */ /* Pas necessaire avec une bonne taille d'images et SPACE-BETWEEN*/
     padding:1%; /* Bordure */
 }
@@ -370,7 +385,7 @@ nav
 .pagemain-member img
 {
     border-radius: 10px 10px 0 0;
-    width:225px; /* 200px; 250 px; */
+    width:100%;
     height: 115px;
 }
 
@@ -409,9 +424,10 @@ aside .collection
 aside .card
 {
     width:98%;
-    max-width:325px; /* Pour éviter le problème de cartes de différentes largeur sur Firefox */
+    /* max-width:325px; /* Pour éviter le problème de cartes de différentes largeur sur Firefox */
     margin:0 0 5% 0; /* Ecart vertical entre les cartes */
     padding:1%; /* Bordure */
+    height:150px;
 }
 
 aside figcaption
@@ -426,7 +442,8 @@ aside img
     border-radius:10px 0 0 10px;
     width:40%;
     /* width:150px; */
-    height:150px; /* 140px; */
+    /* height:150px; /* 140px; */
+    height:100%;
 }
 
 .fa-chart-line /* Icône à droite*/
@@ -515,22 +532,41 @@ footer ul
 /* RESPONSIVE DESIGN */
 /* aspect-ratio and orientation and resolution */
 /* Responsive design: tous les types d'écrans de moins de 426px */
-@media all and (min-width: 320px) and (max-width: 425px)
+@media all and (min-width: 320px) and (max-width: 500px)
 {
     .pagemain
     {
         padding:0;
     }
-    header
+    /* CHANTIER */
+    .topsection-menu2 li
     {
-        flex-wrap:nowrap;
-        justify-content:flex-start; /* Tentative pour avoir 'S'inscire' sur la même ligne que le logo */
+        width:50%;
+        height:50px;
     }
-    .topsection-menu
+    .topsection-menu2 img
     {
-        flex-direction:row;
-        flex-wrap:wrap;
+        width:100px;
     }
+    .topsection-menu2 li:nth-child(1) a
+    {
+        margin:auto auto auto 3%;
+    }
+    .topsection-menu2 li:nth-child(2)
+    {
+        order:5;
+        border-bottom: 3px solid #F2F2F2;
+    }
+    .topsection-menu2 li:nth-child(3)
+    {
+        order:5;
+        border-bottom: 3px solid #F2F2F2;
+    }
+    .topsection-menu2 li:nth-child(4) a
+    {
+        margin:auto 3% auto auto;
+    }
+    /* FIN du CHANTIER */
     .topsection-menu li
     {
         border-bottom: 3px solid #F2F2F2;
@@ -573,7 +609,11 @@ footer ul
         /* margin-right:0; */
         background-color:white;
     }
-    .pagemain-member img
+    .pagemain-member a
+    {
+        width:98%;
+    }
+    .pagemain-member .card
     {
         width:100%;
     }
@@ -582,6 +622,10 @@ footer ul
         width:96%;
         margin:0 0 1% 0; /* Ecart vertical avec la partie hébergements */
         border-radius:0;
+    }
+    aside a 
+    {
+        width:98%;
     }
     aside .card
     {
@@ -610,8 +654,22 @@ footer ul
 }
 
 /* Responsive design: seulement les écrans de largeur entre 426px et 1023px */
-@media only screen and (min-width:426px) and (max-width:1023px) /* and (orientation:portrait) */
+@media only screen and (min-width:501px) and (max-width:640px) /* and (orientation:portrait) */
 {
+}
+
+/* Responsive design: seulement les écrans de largeur entre 426px et 1023px */
+@media only screen and (min-width:641px) and (max-width:1023px) /* and (orientation:portrait) */
+{
+    .topsection-menu2 li
+    {
+        width:25%;
+        height:50px;
+    }
+    .topsection-menu2 img
+    {
+        width:100px;
+    }
     .pagemain
     {
         flex-direction:column-reverse;
@@ -622,6 +680,10 @@ footer ul
         margin:0 0 1% 0; /* Ecart vertical avec la partie hébergements */
         border-radius:0;
     }
+    aside a 
+    {
+        width:auto;
+    }
     aside .collection
     {
         justify-content:space-around;
@@ -630,16 +692,19 @@ footer ul
     {
         flex-direction:column;
         width:170px;
+        height:100%;
     }
     aside figcaption
     {
         width:100%;
+        height:100%;
     }
 
     aside img
     {
         border-radius: 10px 10px 0 0;
         width:100%;
+        height:115px;
     }
     aside .card-rating
     {
@@ -649,6 +714,19 @@ footer ul
     {
         width:96%;
         margin:0;
+    }
+    .pagemain-member .collection
+    {
+        justify-content:space-around;
+    }
+    .pagemain-member a
+    {
+        width:30%;
+    }
+    .pagemain-member .card
+    {
+        /* width:170px; */
+        width:100%;
     }
     .pagearea .collection-member
     {
