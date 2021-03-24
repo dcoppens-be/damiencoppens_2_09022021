@@ -539,7 +539,7 @@ footer li:first-child
 
 /* RESPONSIVE DESIGN */
 /* aspect-ratio and orientation and resolution */
-/* Responsive design: tous les types d'écrans de moins de 500px */
+/* Responsive design: tous les supports jusqu'à 500px de largeur */
 @media all and (min-width: 1px) and (max-width: 500px)
 {
     /* ALIGNEMENT */
@@ -673,7 +673,7 @@ footer li:first-child
 
 
 
-/* Responsive design: seulement les écrans de largeur entre 426px et 1023px */
+/* Responsive design: seulement les écrans de largeur entre 501px et 640px */
 @media only screen and (min-width:501px) and (max-width:640px) /* and (orientation:portrait) */
 {
     /* ALIGNEMENT */
@@ -778,7 +778,7 @@ footer li:first-child
 
 
 
-/* Responsive design: seulement les écrans de largeur entre 426px et 1023px */
+/* Responsive design: seulement les écrans de largeur entre 641px et 1023px */
 @media only screen and (min-width:641px) and (max-width:1023px) /* and (orientation:portrait) */
 {
     /* ALIGNEMENT */
